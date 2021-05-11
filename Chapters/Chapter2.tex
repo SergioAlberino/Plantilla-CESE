@@ -5,198 +5,232 @@
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-Todos los capítulos deben comenzar con un breve párrafo introductorio que indique cuál es el contenido que se encontrará al leerlo.  La redacción sobre el contenido de la memoria debe hacerse en presente y todo lo referido al proyecto en pasado, siempre de modo impersonal.
+En este capítulo se presentan las distintas tecnologías y metodologías disponibles para la implementación del prototipo de robot móvil. Se describen los dispositivos y arquitecturas más significativos que permitieron alcanzar los requerimientos planteados.
 
-\section{Estilo y convenciones}
-\label{sec:ejemplo}
+\section{Criterios de diseño del robot}
 
-\subsection{Uso de mayúscula inicial para los título de secciones}
+En esta sección se enumeran los aspectos considerados a la hora diseñar el robot. Se tuvieron en cuenta los alcances establecidos como así también las posibilidades económicas de solventar el proyecto. 
 
-Si en el texto se hace alusión a diferentes partes del trabajo referirse a ellas como capítulo, sección o subsección según corresponda. Por ejemplo: ``En el capítulo \ref{Chapter1} se explica tal cosa'', o ``En la sección \ref{sec:ejemplo} se presenta lo que sea'', o ``En la subsección \ref{subsec:ejemplo} se discute otra cosa''.
 
-Cuando se quiere poner una lista tabulada, se hace así:
 
-\begin{itemize}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{itemize}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-Si se desea poner una lista numerada el formato es este:
-
-\begin{enumerate}
-	\item Este es el primer elemento de la lista.
-	\item Este es el segundo elemento de la lista.
-\end{enumerate}
-
-Notar el uso de las mayúsculas y el punto al final de cada elemento.
-
-\subsection{Este es el título de una subsección}
-\label{subsec:ejemplo}
-
-Se recomienda no utilizar \textbf{texto en negritas} en ningún párrafo, ni tampoco texto \underline{subrayado}. En cambio sí se debe utilizar \textit{texto en itálicas} para palabras en un idioma extranjero, al menos la primera vez que aparecen en el texto. En el caso de palabras que estamos inventando se deben utilizar ``comillas'', así como también para citas textuales. Por ejemplo, un \textit{digital filter} es una especie de ``selector'' que permite separar ciertos componentes armónicos en particular.
-
-La escritura debe ser impersonal. Por ejemplo, no utilizar ``el diseño del firmware lo hice de acuerdo con tal principio'', sino ``el firmware fue diseñado utilizando tal principio''. 
-
-El trabajo es algo que al momento de escribir la memoria se supone que ya está concluido, entonces todo lo que se refiera a hacer el trabajo se narra en tiempo pasado, porque es algo que ya ocurrió. Por ejemplo, "se diseñó el firmware empleando la técnica de test driven development".
-
-En cambio, la memoria es algo que está vivo cada vez que el lector la lee. Por eso transcurre siempre en tiempo presente, como por ejemplo:
-
-``En el presente capítulo se da una visión global sobre las distintas pruebas realizadas y los resultados obtenidos. Se explica el modo en que fueron llevados a cabo los test unitarios y las pruebas del sistema''.
-
-Se recomienda no utilizar una sección de glosario sino colocar la descripción de las abreviaturas como parte del mismo cuerpo del texto. Por ejemplo, RTOS (\textit{Real Time Operating System}, Sistema Operativo de Tiempo Real) o en caso de considerarlo apropiado mediante notas a pie de página.
-
-Si se desea indicar alguna página web utilizar el siguiente formato de referencias bibliográficas, dónde las referencias se detallan en la sección de bibliografía de la memoria, utilizado el formato establecido por IEEE en \citep{IEEE:citation}. Por ejemplo, ``el presente trabajo se basa en la plataforma EDU-CIAA-NXP \citep{CIAA}, la cual...''.
-
-\subsection{Figuras} 
-
-Al insertar figuras en la memoria se deben considerar determinadas pautas. Para empezar, usar siempre tipografía claramente legible. Luego, tener claro que \textbf{es incorrecto} escribir por ejemplo esto: ``El diseño elegido es un cuadrado, como se ve en la siguiente figura:''
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-\end{figure}
-
-La forma correcta de utilizar una figura es con referencias cruzadas, por ejemplo: ``Se eligió utilizar un cuadrado azul para el logo, como puede observarse en la figura \ref{fig:cuadradoAzul}''.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[scale=.45]{./Figures/cuadradoAzul.png}
-	\caption{Ilustración del cuadrado azul que se eligió para el diseño del logo.}
-	\label{fig:cuadradoAzul}
-\end{figure}
-
-El texto de las figuras debe estar siempre en español, excepto que se decida reproducir una figura original tomada de alguna referencia. En ese caso la referencia de la cual se tomó la figura debe ser indicada en el epígrafe de la figura e incluida como una nota al pie, como se ilustra en la figura \ref{fig:palabraIngles}.
+\subsection{Placa de microprocesamiento}
+Se utilizó  la placa de desarrollo EDUCIAA-NXP \citep{EDUCIAA} ya que la misma se usa para la ejercitación en varias asignaturas de la carrera de postgrado. En la figura \ref{fig:EDUCIAANXP} se observa una imagen de la EDU-CIAA-NXP, que es una versión de bajo costo de la CIAA-NXP, pensada para la enseñanza universitaria, terciaria y secundaria. 
 
 \begin{figure}[htpb]
 	\centering
-	\includegraphics[scale=.3]{./Figures/word.jpeg}
-	\caption{Imagen tomada de la página oficial del procesador\protect\footnotemark.}
-	\label{fig:palabraIngles}
+	\includegraphics[width=\textwidth]{./Figures/EDUCIAANXP.jpg}
+	\caption{placa de desarrollo EDUCIAA-NXP.\protect\footnotemark.}
+	\label{fig:EDUCIAANXP}
+\end{figure}
+\footnotetext{Imagen tomada de \url{http://www.proyecto-ciaa.com.ar}}
+
+
+
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=9cm]{./Figures/Bloques.jpg}
+	\caption{Diagrama en bloques de la EDUCIAA-NXP.\protect\footnotemark.}
+	\label{fig:Bloques}
+\end{figure}
+\footnotetext{Imagen tomada de \url{http://www.proyecto-ciaa.com.ar}}
+
+
+En la figura \ref{fig:Bloques} puede verse un diagrama en bloques general de la placa. 
+
+El  microcontrolador utilizado por la EDU-CIAA es el LPC4337 (dual core ARM Cortex-M4F y Cortex-M0). Los recursos más significativos que se utilizaron de la placa fueron: 
+
+
+\begin{itemize}
+	\item GPIO (General Purpose Input/Output, Entrada/Salida de Propósito General)
+	\item PWM (Pulse Width Modulation, modulación por ancho de pulso).
+	\item UART (Universal Asynchronous Receiver-Transmitter, Transmisor-Receptor Asíncrono Universal).
+	\item Temporizadores.
+\end{itemize}
+
+
+
+\subsection{Driver de motores}
+
+Se utilizó un módulo para el accionamiento de motores \citep{Driver}. En la figura \ref{fig:Driver} se puede observar una imagen de la placa 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=5cm]{./Figures/L298N.png}
+	\caption{Driver de motores.\protect\footnotemark.}
+	\label{fig:Driver}
+\end{figure}
+\footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
+
+
+El módulo está basado en el circuito integrado L298N \citep{L298} y permite controlar dos motores de corriente continua de manera simultánea e independiente.  Sus características principales son:
+
+\begin{itemize}
+	\item Tensión mínima: 5 V.
+	\item Tensión máxima: 35 V.
+	\item Corriente máxima: 2 A.
+	\item Tensión de nivel lógico: 5 V.
+	\item Potencia máxima 25 W
+	\item Medidas: 43 x 43 x 24 mm
+\end{itemize}
+
+La placa tiene la opción de habilitar o no el regulador LM7805 integrado para alimentar la parte lógica. En la figura \ref{fig:Esquema} se observa el diagrama esquemático del módulo.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{./Figures/Modulo.png}
+	\caption{diagrama esquemático del módulo.\protect\footnotemark.}
+	\label{fig:Esquema}
+\end{figure}
+\footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
+\pagebreak
+
+
+
+\subsection{Módulo sensor de Infrarrojos}
+
+Se utilizaron dos módulos sensores de proximidad por infrarrojos IR FC-51 \citep{IR} para la detección de obstáculos por parte del robot. Estos módulos están compuestos por  un emisor de luz infrarroja (IR)  y un receptor que detecta su reflejo en  las superficies contra las que se enfrenta, de modo que presentan una señal en  presencia de cualquier obstáculo en su parte frontal. Un potenciómetro permite al ajustar el rango de detección. 
+
+El sensor presenta una respuesta estable incluso con luz ambiente o en completa oscuridad. En la figura \ref{fig:moduloIR} se observa una imagen del sensor de Infrarrojos.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{./Figures/moduloIR.jpg}
+	\caption{Módulo sensor de Infrarrojos .\protect\footnotemark.}
+	\label{fig:moduloIR}
+\end{figure}
+\footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
+
+
+
+En la figura \ref{fig:IRschem} se muestra el circuito esquemático  del sensor de Infrarrojos
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=14cm]{./Figures/IRschem.jpg}
+	\caption{Esquema del módulo sensor de Infrarrojos .\protect\footnotemark.}
+	\label{fig:IRschem}
+\end{figure}
+\footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
+\pagebreak
+
+Las características del módulo son:
+\begin{itemize}
+	\item Ángulo de cobertura: 35°.
+	\item Tensión de funcionamiento: 3 V – 6 V.
+	\item Rango de detección: 2 cm – 30 cm (ajustable con el potenciómetro).
+	\item Tamaño: 4,5 cm x 1,4 cm x 0.7cm. 
+	\item Discriminación: Las salida toma nivel lógico bajo cuando se detecta un obstáculo (reflexión).
+\end{itemize}
+
+
+
+\subsection{Baterías}
+
+En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varían de un modelo a otro pero suelen estar comprendidas entre los 2100 maH y los 4000maH.Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
+
+Las baterías van conectadas en serie para lograr una tensión de 7,4 V acorde a la alimentación de los motores y con un margen superior necesario para el correcto funcionamiento del regulador de tensión de 5 V del módulo de accionamiento de motores. 
+Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:portapila} se muestra las dos baterías 18650 ya instaladas en su portapila.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{./Figures/portapilas.PNG}
+	\caption{Las dos baterías 18650 en su portapila .}
+	\label{fig:portapila}
 \end{figure}
 
-\footnotetext{Imagen tomada de \url{https://goo.gl/images/i7C70w}}
 
-La figura y el epígrafe deben conformar una unidad cuyo significado principal pueda ser comprendido por el lector sin necesidad de leer el cuerpo central de la memoria. Para eso es necesario que el epígrafe sea todo lo detallado que corresponda y si en la figura se utilizan abreviaturas entonces aclarar su significado en el epígrafe o en la misma figura.
+\subsection{Módulo de comunicaciones Bluetooth}
+
+Se utilizó el módulo Bluetooth HC-05 para la comunicación comunicaciones con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “Protocolos de Comunicaciones en sistemas embebidos”, conectado al puerto serie de la EDU-CIAA. Todos los parámetros del módulo se pueden configurar mediante comandos AT. 
+
+En la figura \ref{fig:moduloHC05} se observa el módulo HC-05.
 
 
-
-\begin{figure}[ht]
+\begin{figure}[h]
 	\centering
-	\includegraphics[scale=.37]{./Figures/questionMark.png}
-	\caption{¿Por qué de pronto aparece esta figura?}
-	\label{fig:questionMark}
+	\includegraphics[width=8cm]{./Figures/HC05.jpeg}
+	\caption{Módulo Bluetooth HC-05 .\protect\footnotemark.}
+	\label{fig:moduloHC05}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://maker.pro/custom/tutorial/hc-05-bluetooth-transceiver-module-datasheet-highlights}}
+
+
+
+Las características del módulo son:
+\begin{itemize}
+	\item Voltaje de operación: 3.6 V - 6 V DC.
+	\item Consumo corriente: 50 mA.
+	\item Bluetooth: V2.0+EDR.
+	\item Frecuencia: Banda ISM 2.4 GHz.
+	\item Modulación: GFSK(Gaussian Frequency Shift Keying)
+	\item Potencia de transmisión: 4 dBm, Class 2.
+	\item Sensibilidad: -84dBm a 0.1% BER.
+	\item Alcance 10 metros.
+	\item Tamaño: 3,7 cm x 1,6 cmm.
+\end{itemize}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%-----------------------------------------------------------------
+\section{Requerimientos}
+
+En esta sección se enumeran los requerimientos planteados en la planificación de trabajo final,elaborada al inicio del proyecto. Se encuentra dividida en requerimientos funcionales y requerimientos no funcionales.
+
+\label{sec:requerimientos}
+
+\begin{enumerate}
+\item Requerimientos funcionales
+	\begin{enumerate}
+	\item Capacidad de locomoción.  El robot debe ser capaz de desplazarse por medio de ruedas motorizadas, a través de superficies planas.
+	\item Capacidad de percepción. El robot debe ser capaz de detectar y obtener información del medio. 
+	\item Capacidad de comunicación inalámbrica.
+	\item El robot deberá funcionar con alimentación a batería recargable.
+	\item El proyecto debe ser extensible a una posible herramienta de enseñanza e investigación
+
+	\end{enumerate}
+\item Requerimientos no funcionales
+	\begin{enumerate}
+	\item El robot no debe resultar peligroso para el ambiente o las personas con las que podría interactuar.
+	\item El diseño del robot debe respetar regulaciones en cuanto a radiación en el espectro ultravioleta.
+	\item Se utilizarán componentes electrónicos disponibles comercialmente en Argentina.
+	\end{enumerate}
+\end{enumerate}
+
+\section{Planificación}
+
+El trabajo se organizó para ser terminado en el mes de junio de 2021 con una dedicación aproximada de 600 horas en total. Con el fin de organizar y dar seguimiento a las actividades requeridas y poder identificar los desvíos en los tiempos de ejecución programados, se cuantificaron los tiempos de las diversas tareas mediante el diagrama de Gantt, que se observa en las figuras \ref{fig:gantt1} y \ref{fig:gantt2}
+
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=\textwidth]{./Figures/gantttabla.PNG}
+\caption{Tabla de tareas de Gantt}
+\label{fig:gantt1}
 \end{figure}
 
-Nunca colocar una figura en el documento antes de hacer la primera referencia a ella, como se ilustra con la figura \ref{fig:questionMark}, porque sino el lector no comprenderá por qué de pronto aparece la figura en el documento, lo que distraerá su atención.
-
-Otra posibilidad es utilizar el entorno \textit{subfigure} para incluir más de una figura, como se puede ver en la figura \ref{fig:three graphs}. Notar que se pueden referenciar también las figuras internas individualmente de esta manera: \ref{fig:1de3}, \ref{fig:2de3} y \ref{fig:3de3}.
- 
-\begin{figure}[!htpb]
-     \centering
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Un caption.}
-         \label{fig:1de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Otro.}
-         \label{fig:2de3}
-     \end{subfigure}
-     \hfill
-     \begin{subfigure}[b]{0.3\textwidth}
-         \centering
-         \includegraphics[width=.65\textwidth]{./Figures/questionMark}
-         \caption{Y otro más.}
-         \label{fig:3de3}
-     \end{subfigure}
-        \caption{Tres gráficos simples}
-        \label{fig:three graphs}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figures/Gantt.PNG}
+\caption{Diagrama de Gantt}
+\label{fig:gantt2}
 \end{figure}
 
-El código para generar las imágenes se encuentra disponible para su reutilización en el archivo \file{Chapter2.tex}.
+\pagebreak
 
-\subsection{Tablas}
+Se confeccionó también un diagrama de Activity on Node, con la finalidad de resaltar las tareas cuyos retrasos podrían resultar críticos para la concreción del trabajo. En rojo se indica el camino crítico, como puede apreciarse en la figura \ref{fig:AoN}
 
-Para las tablas utilizar el mismo formato que para las figuras, sólo que el epígrafe se debe colocar arriba de la tabla, como se ilustra en la tabla \ref{tab:peces}. Observar que sólo algunas filas van con líneas visibles y notar el uso de las negritas para los encabezados.  La referencia se logra utilizando el comando \verb|\ref{<label>}| donde label debe estar definida dentro del entorno de la tabla.
-
-\begin{verbatim}
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie}     & \textbf{Tamaño} & \textbf{Valor}\\
-		\midrule
-		Amphiprion Ocellaris & 10 cm           & \$ 6.000 \\		
-		Hepatus Blue Tang    & 15 cm           & \$ 7.000 \\
-		Zebrasoma Xanthurus  & 12 cm           & \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
-\end{verbatim}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figures/AoN.png}
+\caption{Diagrama en \textit{Activity on Node}}
+\label{fig:AoN}
+\end{figure}
 
 
-\begin{table}[h]
-	\centering
-	\caption[caption corto]{caption largo más descriptivo}
-	\begin{tabular}{l c c}    
-		\toprule
-		\textbf{Especie} 	 & \textbf{Tamaño} 		& \textbf{Valor}  \\
-		\midrule
-		Amphiprion Ocellaris & 10 cm 				& \$ 6.000 \\		
-		Hepatus Blue Tang	 & 15 cm				& \$ 7.000 \\
-		Zebrasoma Xanthurus	 & 12 cm				& \$ 6.800 \\
-		\bottomrule
-		\hline
-	\end{tabular}
-	\label{tab:peces}
-\end{table}
+A partir de este análisis está organizado el trabajo que se presenta en los próximos capítulos.
 
-En cada capítulo se debe reiniciar el número de conteo de las figuras y las tablas, por ejemplo, figura 2.1 o tabla 2.1, pero no se debe reiniciar el conteo en cada sección. Por suerte la plantilla se encarga de esto por nosotros.
-
-\subsection{Ecuaciones}
-\label{sec:Ecuaciones}
-
-Al insertar ecuaciones en la memoria dentro de un entorno \textit{equation}, éstas se numeran en forma automática  y se pueden referir al igual que como se hace con las figuras y tablas, por ejemplo ver la ecuación \ref{eq:metric}.
-
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + \sigma^2\left[ d\theta^2 + \sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-                                                        
-Es importante tener presente que si bien las ecuaciones pueden ser referidas por su número, también es correcto utilizar los dos puntos, como por ejemplo ``la expresión matemática que describe este comportamiento es la siguiente:''
-
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = -i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-Para generar la ecuación \ref{eq:metric} se utilizó el siguiente código:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:metric}
-	ds^2 = c^2 dt^2 \left( \frac{d\sigma^2}{1-k\sigma^2} + 
-	\sigma^2\left[ d\theta^2 + 
-	\sin^2\theta d\phi^2 \right] \right)
-\end{equation}
-\end{verbatim}
-
-Y para la ecuación \ref{eq:schrodinger}:
-
-\begin{verbatim}
-\begin{equation}
-	\label{eq:schrodinger}
-	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi = 
-	-i\hbar \frac{\partial\Psi}{\partial t}
-\end{equation}
-
-\end{verbatim}
