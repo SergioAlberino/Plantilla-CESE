@@ -4,7 +4,7 @@
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 \label{IntroGeneral}
-
+En este capítulo se presentan las características de los robots de servicio, se  reseña el uso de luz ultravioleta como germicida y se exponen los objetivos que motivaron el presente trabajo y sus respectivo alcance.
 %----------------------------------------------------------------------------------------
 
 % Define some commands to keep the formatting separated from the content 
@@ -20,37 +20,76 @@
 %\section{Introducción}
 
 %----------------------------------------------------------------------------------------
-\section{Aprendiendo \LaTeX{}}
+\section{Robots de servicio}
 
-\LaTeX{} no es \textsc{WYSIWYG} (What You See is What You Get), a diferencia de los procesadores de texto como Microsoft Word o Pages de Apple o incluso LibreOffice en el mundo open-source. En lugar de ello, un documento escrito para \LaTeX{} es en realidad un archivo de texto simple o llano que \emph{no contiene formato} . Nosotros le decimos a \LaTeX{} cómo deseamos que se aplique el formato en el documento final escribiendo comandos simples entre el texto, por ejemplo, si quiero usar texto en itálicas para dar énfasis, escribo \verb|\it{texto}| y pongo el texto que quiero en itálicas entre medio de las llaves. Esto significa que \LaTeX{} es un lenguaje del tipo \enquote{mark-up}, muy parecido a HTML.
+A lo largo del siglo XX la robótica pasó de ser una temática de la rama de la ciencia ficción, a cumplir un importante rol dentro de los complejos industriales. En los últimos años los robots han pasado a tener cada vez más tareas de “servicio” para ambientes  públicos y hogareños.
+La robótica de servicios abarca un amplio campo de aplicaciones, la mayoría de las cuales tienen diferentes grados de automatización, desde la teleoperación completa hasta la funcionamiento autónomo, y constituye un campo de aplicación más diverso que el de la robótica industrial. En la  figura \ref{fig:robotsservicio} se pueden observar tres tipos de robots de servicios: una aspiradora hogareña, un cortador de césped y un limpiavidrios.
 
-\subsection{Una introducción (no tan corta) a \LaTeX{}}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{./Figures/robotsservicio.jpg}
+	\caption{robots de servicio.\protect\footnotemark.}
+	\label{fig:robotsservicio}
+\end{figure}
+\footnotetext{Imágenes tomadas de \url{https://www.domotizar.com/}}
 
-Si sos nuevo en \LaTeX{}, hay un muy buen libro electrónico - disponible gratuitamente en Internet como un archivo PDF - llamado, \enquote{A (not so short) Introduction to \LaTeX{}}. El título del libro es generalmente acortado a simplemente \emph{lshort}. Puede descargar la versión más reciente en inglés (ya que se actualiza de vez en cuando) desde aquí:
-\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}
 
-Se puede encontrar la versión en español en la lista en esta página: \url{http://www.ctan.org/tex-archive/info/lshort/}
+A mediados de la década de 1990, la Comisión Económica de las Naciones Unidas para Europa (UNECE) .\citep{UNECE} y la Federación Internacional de Robótica (IFR) .\citep{IFR} adoptaron un sistema de clasificación de robots de servicio dividida por categorías y tipos de interacción, que se ha mantenido clasificación actual. En la  figura \ref{fig:robotsservicio} se puede observar los primeros ítems de clasificación para robots domésticos/personales de acuerdo a los tipos y áreas de aplicación.
 
-\subsubsection{Una subsubsección}
 
-Acá tiene un ejemplo de una ``subsubsección'' que es el cuarto nivel de ordenamiento del texto, después de capítulo, sección y subsección.  Como se puede ver, las subsubsecciones no van numeradas en el cuerpo del documento ni en el índice.  El formato está definido por la plantilla y no debe ser modificado.
 
-\subsection{Guía matemática rápida para \LaTeX{}}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{./Figures/clasificacion.png}
+	\caption{clasificación de robots de servicio.\protect\footnotemark.}
+	\label{fig:clasificacion}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://www.editores-srl.com.ar/sites/default/files/aa1_ifr_robots.pdf}}
 
-Si estás escribiendo un documento con mucho contenido matemático, entonces es posible que desees leer el documento de la AMS (American Mathematical Society) llamado, \enquote{A Short Math Guide for \LaTeX{}}. Se puede encontrar en línea en el siguiente link: \url{http://www.ams.org/tex/amslatex.html} en la sección \enquote{Additional Documentation} hacia la parte inferior de la página.
+
+
+
+\subsection{Robots móviles para inspección y limpieza}
+
+Los robots móviles son dispositivos que poseen un sistema de locomoción capaz de navegar a través de un determinado ambiente de trabajo. Normalmente cuentan con cierto nivel de autonomía que les permite el desplazamiento sin colisiones por un recorrido específico. Sus aplicaciones son muchas y en general  están relacionadas con tareas monótonas o riesgosas para la salud humana.
+Las plataformas móviles pueden realizar tareas de inspección y limpieza de manera autónoma o controlada remotamente por un operador. Son utilizadas en zonas de difícil acceso debido a limitaciones de espacio o razones de seguridad.  
+Este tipo de robot suele contar con sensores de distinto tipo, para detectar los límites y obstáculos ante los que se presentan. 
+La proliferación de de robots para limpieza se incrementó fuertemente a partir de la pandemia de Covid-19, con lo que se los puede encontrar hoy en día en espacios en los que antes no estaban presentes, tales como salas médicas,  hoteles y en el transporte público  .\citep{Cleaning}. Estos dispositivos “de interior” abarcan a la aspiradoras robóticas y a los robots de lavado de pisos que limpian pisos con funciones de barrido y trapeado húmedo. 
+
+
+\subsubsection{Robots de limpieza UVC}
+
+Acá va una comparativa de robots de limpieza UVC.
+.
+.
+.
+.
+.
 
 
 %----------------------------------------------------------------------------------------
 
-\section{Utilizando esta plantilla}
+\section{Desinfección usando Luz ultravioleta}
 
-Si estás familiarizado con \LaTeX{}, entonces podés explorar la estructura de directorios de esta plantilla y proceder a personalizarla agregando tu información en el bloque \emph{INFORMACIÓN DE LA PORTADA} en el archivo \file{memoria.tex}.  
+El espectro ultravioleta (UV) abarca la banda de radiación electromagnética entre los 400 y 100 nm, presentando una longitud de onda menor que la de la luz visible y mayor que la de los rayos X.  Se divide en tres las siguientes categorías principales: los rayos UV-A (400 – 315 nm), que son los más cercanos al espectro visible; los rayos UV-B (315 – 280 nm), que son absorbidos en gran parte por diferentes elementos a medida que atraviesan el cielo y los rayos UV-C (280 – 200 nm), que son absorbidos totalmente por la capa de ozono. En la  figura \ref{fig:espectro} se observa detalle de parte del espectro de radiación electromagnética y  su clasificación según longitud de onda.
 
-Se puede continuar luego modificando el resto de los archivos siguiendo los lineamientos que se describen en la sección \ref{sec:FillingFile} en la página \pageref{sec:FillingFile}.
 
-Debés asegurarte de leer el capítulo \ref{Chapter2} acerca de las convenciones utilizadas para las Memoria de los Trabajos Finales de la \degreename.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{./Figures/espectro.PNG}
+	\caption{clasificación según longitud de onda.\protect\footnotemark.}
+	\label{fig:espectro}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://www.lit-uv.com/es/technology/}}
 
-Si sos nuevo en \LaTeX{}, se recomienda que continúes leyendo el documento ya que contiene información básica para aprovechar el potencial de esta herramienta.
+La utilización de luz ultravioleta UV-C como germicida ha demostrado efectividad para la esterilización  las bacterias, gérmenes, virus, algas y esporas. 
+
+Los virus tienen un tamaño inferior a un micrómetro (µm, una millonésima parte de un metro) y las bacterias son típicamente de 0,5 a 5 µm. Técnicamente es incorrecto decir que los rayos  UV-C matan a los virus, siendo que no se trata de organismos vivientes. Sin embargo, el comité de foto-biología de la Illuminating Engineering Society (IES) informa que los fotones UV-C interactúan con el ARN y las moléculas de ADN en un virus o bacteria de modo que se evita su reproducción y por lo tanto su efecto infeccioso. A este proceso se lo denomina “desactivación”  .\citep{IES}.
+
+La International Ultraviolet Association (IUVA) afirma que los resultados de pruebas en laboratorio de desinfección utilizando UV-C entre los 200 y 280nm demuestran especial utilidad para reducir la transmisión de los virus causantes del COVID-19:  SARS-CoV-1 y MERS-CoV .\citep{IUA}. En la práctica, el efecto depende de factores tales como  el tiempo de exposición y obstrucción que puedan tener los rayos para alcanzar plenamente los pliegues u ondulaciones que pudiera tener la superficie a desinfectar. 
+
+Este tipo de desinfección, que no genera residuos químicos, es especialmente recomendada cuando debe realizarse sobre materiales que podrían verse afectados o dañados ante la limpieza continua con productos a base de alcoholes líquidos, como ser dispositivos electrónicos o materiales susceptibles de oxidación. También es especialmente aplicable en el caso de superficies de difícil acceso por su ubicación o por presentar formas y estructuras que no permiten la higienización por contacto con paños o rociadores. 
+Por otra parte, si bien la Organización Mundial de la Salud (OMS) recomienda el uso de rayos UV-C para desinfección, también alerta sobre los riesgos de  exposición en seres humanos y animales, cuya piel puede verse irritada, a la vez que puede producir daños a la vista [6]. En este sentido promueven la limpieza de manos periódica con jabón o con alcohol, y dejan la esterilización con UV-C para  instrumental y objetos de uso diario.
 
 
 %----------------------------------------------------------------------------------------
