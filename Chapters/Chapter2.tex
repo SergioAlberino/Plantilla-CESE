@@ -7,24 +7,25 @@
 %----------------------------------------------------------------------------------------
 En este capítulo se presentan las distintas tecnologías y metodologías disponibles para la implementación del prototipo de robot móvil. Se describen los dispositivos y arquitecturas más significativos que permitieron alcanzar los requerimientos planteados.
 
-\section{Criterios de diseño del robot}
+\section{Módulos y dispositivos de hardware}
 
-En esta sección se enumeran los aspectos considerados a la hora diseñar el robot. Se tuvieron en cuenta los alcances establecidos como así también las posibilidades económicas de solventar el proyecto. 
-
+En esta sección se describen los Módulos y dispositivos de hardware que componen el prototipo robot desarrollado
 
 
 \subsection{Placa de microprocesamiento}
-Se utilizó  la placa de desarrollo EDUCIAA-NXP \citep{EDUCIAA} ya que la misma se usa para la ejercitación en varias asignaturas de la carrera de postgrado. En la figura \ref{fig:EDUCIAANXP} se observa una imagen de la EDU-CIAA-NXP, que es una versión de bajo costo de la CIAA-NXP, pensada para la enseñanza universitaria, terciaria y secundaria. 
+Se utilizó  la placa de desarrollo EDUCIAA-NXP \citep{EDUCIAA} ya que la misma se usa para la ejercitación en varias asignaturas de la carrera de postgrado. En la figura \ref{fig:EDUCIAANXP} se observa una imagen de la EDU-CIAA-NXP, una versión de bajo costo de la CIAA-NXP, pensada para la enseñanza universitaria, terciaria y secundaria. 
 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=\textwidth]{./Figures/EDUCIAANXP.jpg}
-	\caption{placa de desarrollo EDUCIAA-NXP.\protect\footnotemark.}
+	\caption{Placa de desarrollo EDUCIAA-NXP\protect\footnotemark.}
 	\label{fig:EDUCIAANXP}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://www.proyecto-ciaa.com.ar}}
 
+\pagebreak
 
+En la figura \ref{fig:Bloques} puede verse un diagrama en bloques general de la placa. 
 
 \begin{figure}[htpb]
 	\centering
@@ -33,9 +34,6 @@ Se utilizó  la placa de desarrollo EDUCIAA-NXP \citep{EDUCIAA} ya que la misma 
 	\label{fig:Bloques}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://www.proyecto-ciaa.com.ar}}
-
-
-En la figura \ref{fig:Bloques} puede verse un diagrama en bloques general de la placa. 
 
 El  microcontrolador utilizado por la EDU-CIAA es el LPC4337 (dual core ARM Cortex-M4F y Cortex-M0). Los recursos más significativos que se utilizaron de la placa fueron: 
 
@@ -48,10 +46,20 @@ El  microcontrolador utilizado por la EDU-CIAA es el LPC4337 (dual core ARM Cort
 \end{itemize}
 
 
-
 \subsection{Driver de motores}
 
 Se utilizó un módulo para el accionamiento de motores \citep{Driver}. En la figura \ref{fig:Driver} se puede observar una imagen de la placa 
+El módulo está basado en el circuito integrado L298N \citep{L298} y permite controlar dos motores de corriente continua de manera simultánea e independiente.  Sus características principales son:
+
+\begin{itemize}
+	\item Tensión mínima: 5 V.
+	\item Tensión máxima: 35 V.
+	\item Corriente máxima: 2 A.
+	\item Tensión de nivel lógico: 5 V.
+	\item Potencia máxima 25 W.
+	\item Medidas: 43 x 43 x 24 mm.
+\end{itemize}
+\pagebreak
 
 \begin{figure}[h]
 	\centering
@@ -61,17 +69,6 @@ Se utilizó un módulo para el accionamiento de motores \citep{Driver}. En la fi
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
 
-
-El módulo está basado en el circuito integrado L298N \citep{L298} y permite controlar dos motores de corriente continua de manera simultánea e independiente.  Sus características principales son:
-
-\begin{itemize}
-	\item Tensión mínima: 5 V.
-	\item Tensión máxima: 35 V.
-	\item Corriente máxima: 2 A.
-	\item Tensión de nivel lógico: 5 V.
-	\item Potencia máxima 25 W
-	\item Medidas: 43 x 43 x 24 mm
-\end{itemize}
 
 La placa tiene la opción de habilitar o no el regulador LM7805 integrado para alimentar la parte lógica. En la figura \ref{fig:Esquema} se observa el diagrama esquemático del módulo.
 
@@ -83,20 +80,20 @@ La placa tiene la opción de habilitar o no el regulador LM7805 integrado para a
 	\label{fig:Esquema}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
-\pagebreak
 
 
 
-\subsection{Módulo sensor de Infrarrojos}
 
-Se utilizaron dos módulos sensores de proximidad por infrarrojos IR FC-51 \citep{IR} para la detección de obstáculos por parte del robot. Estos módulos están compuestos por  un emisor de luz infrarroja (IR)  y un receptor que detecta su reflejo en  las superficies contra las que se enfrenta, de modo que presentan una señal en  presencia de cualquier obstáculo en su parte frontal. Un potenciómetro permite al ajustar el rango de detección. 
+\subsection{Módulo sensor de infrarrojos}
 
-El sensor presenta una respuesta estable incluso con luz ambiente o en completa oscuridad. En la figura \ref{fig:moduloIR} se observa una imagen del sensor de Infrarrojos.
+Se utilizaron dos módulos sensores de proximidad por infrarrojos IR FC-51 \citep{IR} para la detección de obstáculos por parte del robot. Estos módulos están compuestos por  un emisor de luz infrarroja (IR)  y un receptor que detecta su reflejo en  las superficies contra las que se enfrenta, de modo que presentan una señal en  presencia de cualquier obstáculo en su parte frontal. Un potenciómetro permite ajustar el rango de detección. 
+
+El sensor presenta una respuesta estable incluso con luz ambiente o en completa oscuridad. En la figura \ref{fig:moduloIR} se observa una imagen del sensor de infrarrojos.
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=8cm]{./Figures/moduloIR.jpg}
-	\caption{Módulo sensor de Infrarrojos .\protect\footnotemark.}
+	\caption{Módulo sensor de infrarrojos \protect\footnotemark.}
 	\label{fig:moduloIR}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
@@ -119,15 +116,15 @@ Las características del módulo son:
 	\item Ángulo de cobertura: 35°.
 	\item Tensión de funcionamiento: 3 V – 6 V.
 	\item Rango de detección: 2 cm – 30 cm (ajustable con el potenciómetro).
-	\item Tamaño: 4,5 cm x 1,4 cm x 0.7cm. 
-	\item Discriminación: Las salida toma nivel lógico bajo cuando se detecta un obstáculo (reflexión).
+	\item Tamaño: 4,5 cm x 1,4 cm x 0,7 cm. 
+	\item Discriminación: la salida toma nivel lógico bajo cuando se detecta un obstáculo (reflexión).
 \end{itemize}
 
 
 
 \subsection{Baterías}
 
-En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varían de un modelo a otro pero suelen estar comprendidas entre los 2100 maH y los 4000maH.Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
+En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varían de un modelo a otro pero suelen estar comprendidas entre los 2100 mAH y los 4000mAH. Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
 
 Las baterías van conectadas en serie para lograr una tensión de 7,4 V acorde a la alimentación de los motores y con un margen superior necesario para el correcto funcionamiento del regulador de tensión de 5 V del módulo de accionamiento de motores. 
 Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:portapila} se muestra las dos baterías 18650 ya instaladas en su portapila.
@@ -143,7 +140,7 @@ Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:po
 
 \subsection{Módulo de comunicaciones Bluetooth}
 
-Se utilizó el módulo Bluetooth HC-05 para la comunicación comunicaciones con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “Protocolos de Comunicaciones en sistemas embebidos”, conectado al puerto serie de la EDU-CIAA. Todos los parámetros del módulo se pueden configurar mediante comandos AT. 
+Se utilizó el módulo Bluetooth HC-05 para la comunicación comunicaciones con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “Protocolos de comunicaciones en sistemas embebidos”, conectado al puerto serie de la EDU-CIAA. Todos los parámetros del módulo se pueden configurar mediante comandos AT. 
 
 En la figura \ref{fig:moduloHC05} se observa el módulo HC-05.
 
@@ -167,8 +164,8 @@ Las características del módulo son:
 	\item Modulación: GFSK(Gaussian Frequency Shift Keying)
 	\item Potencia de transmisión: 4 dBm, Class 2.
 	\item Sensibilidad: -84dBm a 0.1% BER.
-	\item Alcance 10 metros.
-	\item Tamaño: 3,7 cm x 1,6 cmm.
+	\item Alcance 10 m.
+	\item Tamaño: 3,7 cm x 1,6 cm.
 \end{itemize}
 
 
@@ -179,7 +176,7 @@ Las características del módulo son:
 %-----------------------------------------------------------------
 \section{Requerimientos}
 
-En esta sección se enumeran los requerimientos planteados en la planificación de trabajo final,elaborada al inicio del proyecto. Se encuentra dividida en requerimientos funcionales y requerimientos no funcionales.
+En esta sección se enumeran los requerimientos planteados en la planificación inicial del proyecto.  Los  requerimientos se han dividido en funcionales y no funcionales.
 
 \label{sec:requerimientos}
 
@@ -203,7 +200,7 @@ En esta sección se enumeran los requerimientos planteados en la planificación 
 
 \section{Planificación}
 
-El trabajo se organizó para ser terminado en el mes de junio de 2021 con una dedicación aproximada de 600 horas en total. Con el fin de organizar y dar seguimiento a las actividades requeridas y poder identificar los desvíos en los tiempos de ejecución programados, se cuantificaron los tiempos de las diversas tareas mediante el diagrama de Gantt, que se observa en las figuras \ref{fig:gantt1} y \ref{fig:gantt2}
+El trabajo se organizó para ser terminado en el mes de junio de 2021 con una dedicación aproximada de 600 horas en total. Con el fin de organizar y dar seguimiento a las actividades requeridas y poder identificar los desvíos en los tiempos de ejecución programados, se cuantificaron los tiempos de las diversas tareas mediante el diagrama de Gantt, que se observa en las figuras \ref{fig:gantt1} y \ref{fig:gantt2}.
 
 
 \begin{figure}[htpb]
@@ -215,7 +212,7 @@ El trabajo se organizó para ser terminado en el mes de junio de 2021 con una de
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figures/Gantt.PNG}
+\includegraphics[width=\textwidth]{./Figures/Gantt.PNG}
 \caption{Diagrama de Gantt}
 \label{fig:gantt2}
 \end{figure}
@@ -226,7 +223,7 @@ Se confeccionó también un diagrama de Activity on Node, con la finalidad de re
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figures/AoN.png}
+\includegraphics[width=\textwidth]{./Figures/AoN.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
