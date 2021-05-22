@@ -140,7 +140,11 @@ Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:po
 
 \subsection{Módulo de comunicaciones Bluetooth}
 
-Se utilizó el módulo Bluetooth HC-05 para la comunicación comunicaciones con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “Protocolos de comunicaciones en sistemas embebidos”, conectado al puerto serie de la EDU-CIAA. Todos los parámetros del módulo se pueden configurar mediante comandos AT. 
+%Siendo que el prototipo robot se diseñó para su uso en ambientes interiores, la distancia del enlace no requiere un valor mayor al de algunos metros. Además la tasa de transferencia de datos no es alta, por lo que el ancho de banda no constituye un parámetro limitante. 
+
+Se utilizó el módulo Bluetooth HC-05 para la comunicación comunicaciones con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “Protocolos de comunicaciones en sistemas embebidos”, conectado al puerto serie de la EDU-CIAA. 
+El módulo permite realizar un enlace digital con un alcance de 10 m aproximadamente y no requiere antena externa ya que se encuentra integrada en el PCB. La velocidad máxima de transmisión asincrónica de 2 Mbps y soporta modo master y modo slave.
+Todos los parámetros del módulo se pueden configurar mediante comandos AT. 
 
 En la figura \ref{fig:moduloHC05} se observa el módulo HC-05.
 
