@@ -11,24 +11,46 @@
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Conclusiones generales }
 
-La idea de esta sección es resaltar cuáles son los principales aportes del trabajo realizado y cómo se podría continuar. Debe ser especialmente breve y concisa. Es buena idea usar un listado para enumerar los logros obtenidos.
+En este capítulo se presenta un breve resumen del trabajo realizado, los problemas encontrados y los resultados obtenidos. También se mencionan mejoras a realizar en el futuro.
 
-Algunas preguntas que pueden servir para completar este capítulo:
+\section{Resultados obtenidos}
 
-\begin{itemize}
-\item ¿Cuál es el grado de cumplimiento de los requerimientos?
-\item ¿Cuán fielmente se puedo seguir la planificación original (cronograma incluido)?
-\item ¿Se manifestó algunos de los riesgos identificados en la planificación? ¿Fue efectivo el plan de mitigación? ¿Se debió aplicar alguna otra acción no contemplada previamente?
-\item Si se debieron hacer modificaciones a lo planificado ¿Cuáles fueron las causas y los efectos?
-\item ¿Qué técnicas resultaron útiles para el desarrollo del proyecto y cuáles no tanto?
-\end{itemize}
+El trabajo finalizó con el desarrollo de un prototipo de robot móvil para tareas de desinfección por efecto de rayos ultravioletas germicidas. Se cumplieron los requerimientos planteados en la planificación del trabajo.
+Se desarrolló con éxito un circuito impreso como placa de expansión de hardware, y un firmware funcional para la placa EDU-CIAA  
+Se verificó el funcionamiento en el modo autónomo, en el que realiza un recorrido evitando obstáculos, como así también  en el  modo de teleoperación, en el que puede controlarse a distancia desde una  aplicación en un celular o Tablet.
+El dispositivo puede ser usado para desinfección sin residuos químicos en espacios públicos y en el hogar. 
+
+La planificación, se cumplió dentro de los plazos esperados, aunque se manifestó el riesgo “Imposibilidad de cumplir con los plazos planteados para el desarrollo del proyecto”. Esto se debió a la  reducción de tiempo disponible para dedicarlo al proyecto,  debido a actividades laborales y estar cursando las últimas materias de le carrera.  Al haber extendido el plazo para la entrega y haber re-planificado actividades se logró mitigar este inconveniente.
 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
+\section{Conocimientos aplicados}
+
+Durante la realización de este trabajo se aplicaron conocimientos adquiridos en el transcurso de la carrera de especialización. 
+En particular, fueron importantes los aportes de las siguiente  asignaturas:
+
+
+\begin{itemize}
+	\item Gestión de proyectos, para realizar la planificación y generar toda la documentación inicial.
+	\item Ingeniería de software para definir los requerimientos básicos y pensar el proyecto desde las necesidades del usuario.También se aplicaron los conocimientos relativos a la implementación de un repositorio GIT para el resguardo y versionado de toda la documentación del proyecto.
+	\item Programación de microcontroladores para la implementación del firmware en C del microcontrolador ARM Cortex-M4 de la placa EDU-CIAA. En la asignatura se presentó todo lo referente a la modularización por archivos implementada en este trabajo y el modelo de máquinas de estado finito.
+	\item Protocolos de comunicaciones en sistemas embebidos, para conocer las posibilidades de comunicación de la placa EDU-CIAA con otros dispositivos, en particular con el módulo Bluetooth. 
+	\item Diseño de Circuitos Impresos, para el desarrollo de la placa de expansión de hardware (poncho) utilizada en este trabajo, y el aprendizaje de buenas costumbres de diseño de PCB
+			
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
 \section{Próximos pasos}
 
-Acá se indica cómo se podría continuar el trabajo más adelante.
+Como mejoras a futuro se contempla:
+
+\begin{itemize}
+	\item Agregar una unidad de medición inercial o IMU (por su sigla en inglés) como ser un acelerómetro o un giróscopo, para tener informa acerca de la velocidad y orientación del robot  en el modo autónomo. De esta manera se podría ampliar la variedad de recorridos posibles y que no dependan únicamente de las características del entorno. 
+	\item Al contar con un puerto I2C en la placa, sería posible incorporar un lector de tarjetas de memoria (tipo SD) para almacenar allí la librería con la que se configura la máquina de estados principal. Con este aditamento sería posible definir o ampliar el comportamiento autónomo del robot sin necesidad de modificar su programación. 		
+	\item Ya que la placa de expansión de hardware utiliza un relé para conmutar el módulo UVC, podían desarrollarse otros módulos (intercambiables) con su propia alimentación, que utilicen diferentes lámparas germicidas o que ofrezcan otras prestaciones.  
+\end{itemize}

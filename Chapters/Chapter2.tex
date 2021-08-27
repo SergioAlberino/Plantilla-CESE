@@ -9,7 +9,7 @@ En este capítulo se presentan las distintas tecnologías y metodologías dispon
 
 \section{Módulos y dispositivos de hardware}
 
-En esta sección se describen los Módulos y dispositivos de hardware que componen el prototipo robot desarrollado
+En esta sección se describen los Módulos y dispositivos de hardware que componen el prototipo robot desarrollado.
 
 
 \subsection{Placa de microprocesamiento}
@@ -30,7 +30,7 @@ En la figura \ref{fig:Bloques} puede verse un diagrama en bloques general de la 
 \begin{figure}[htpb]
 	\centering
 	\includegraphics[width=9cm]{./Figures/Bloques.jpg}
-	\caption{Diagrama en bloques de la EDUCIAA-NXP.\protect\footnotemark.}
+	\caption{Diagrama en bloques de la EDUCIAA-NXP\protect\footnotemark.}
 	\label{fig:Bloques}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://www.proyecto-ciaa.com.ar}}
@@ -48,8 +48,7 @@ El  microcontrolador utilizado por la EDU-CIAA es el LPC4337 (dual core ARM Cort
 
 \subsection{Driver de motores}
 
-Se utilizó un módulo para el accionamiento de motores \citep{Driver}. En la figura \ref{fig:Driver} se puede observar una imagen de la placa 
-El módulo está basado en el circuito integrado L298N \citep{L298} y permite controlar dos motores de corriente continua de manera simultánea e independiente.  Sus características principales son:
+Se utilizó un módulo para el accionamiento de motores \citep{Driver}. En la figura \ref{fig:Driver} se puede observar una imagen de la placa y sus conectores. El módulo está basado en el circuito integrado L298N (doble puente H) \citep{L298} y permite controlar dos motores de corriente continua de manera simultánea e independiente.  Sus características principales son:
 
 \begin{itemize}
 	\item Tensión mínima: 5 V.
@@ -64,7 +63,7 @@ El módulo está basado en el circuito integrado L298N \citep{L298} y permite co
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=5cm]{./Figures/L298N.png}
-	\caption{Driver de motores.\protect\footnotemark.}
+	\caption{Driver de motores\protect\footnotemark.}
 	\label{fig:Driver}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
@@ -76,7 +75,7 @@ La placa tiene la opción de habilitar o no el regulador LM7805 integrado para a
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=12cm]{./Figures/Modulo.png}
-	\caption{diagrama esquemático del módulo.\protect\footnotemark.}
+	\caption{Diagrama esquemático del módulo\protect\footnotemark.}
 	\label{fig:Esquema}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
@@ -100,12 +99,12 @@ El sensor presenta una respuesta estable incluso con luz ambiente o en completa 
 
 
 
-En la figura \ref{fig:IRschem} se muestra el circuito esquemático  del sensor de Infrarrojos
+En la figura \ref{fig:IRschem} se muestra el circuito esquemático del sensor de Infrarrojos
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=14cm]{./Figures/IRschem.jpg}
-	\caption{Esquema del módulo sensor de Infrarrojos .\protect\footnotemark.}
+	\caption{Diagrama esquemático del módulo sensor de Infrarrojos\protect\footnotemark.}
 	\label{fig:IRschem}
 \end{figure}
 \footnotetext{Imagen tomada de \url{http://robots-argentina.com.ar}}
@@ -122,27 +121,120 @@ Las características del módulo son:
 
 
 
+\subsection{Módulo detector pasivo de infrarrojos}
+Los detectores PIR (Passive Infrared) o Pasivo Infrarrojo, captan la variación de las radiaciones infrarrojas del medio ambiente que los rodea y de esa manera reaccionan ante fuentes de energía tales como el calor del cuerpo humano o de animales. Es llamado pasivo debido a que no emite radiaciones, sino que las recibe. Su funcionamiento se basa en el sensor piroeléctrico que es un componente electrónico diseñado para detectar cambios en la radiación infrarroja recibida. 
+
+Se utilizó un módulo PIR HC-SR501 \citep{PIR} que cuenta con dos potenciómetros para regular la sensibilidad y el tiempo de duración del pulso. Las principales características son:
+
+\begin{itemize}
+	\item Tensión de operación: 4,5 V - 20 V.
+	\item Corriente en reposo: <50 uA.
+	\item Rango de detección: 3 a 7 metros (ajustable).
+	\item Tiempo de retardo: 5 - 200 Seg (puede ser ajustado).
+	\item Angulo de detección: <100º (cono).
+	\item Tamaño: 3,2 cm x 2,4 cm x 1,8 cm.
+\end{itemize}
+
+En la figura \ref{fig:pir} se puede ver una imagen del módulo PIR HC-SR501 utilizado.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=8cm]{./Figures/pir.PNG}
+	\caption{Módulo PIR HC-SR501\protect\footnotemark.}
+	\label{fig:pir}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://naylampmechatronics.com/}}
+
+
+
+\subsection{Buzzer o Transductor electroacústico}
+
+Se utilizó un buzzer o transductor electroacústico para la señalización sonora sobre el estado de operación del robot. el traanductor produce un tono audible, generado por un diafragma piezoeléctrico. 
+El buzzer seleccionado es de tipo Activo, es decir que posee un oscilador incorporado al dispositivo. 
+Sus características Técnicas son:
+
+\begin{itemize}
+	\item Tensión de operación: 3,3 V ~ 5 V.
+	\item Corriente de operación: <25 mA.
+	\item Salida de sonido min a 10 cm: 85 dB.
+	\item Frecuencia: 3,1 kHz. 	
+	\item Diámetro: 12 mm.
+	\item Altura: 7,5 mm.
+	\item Longitud: 7,5 mm.	
+\end{itemize}
+
+
+En la figura \ref{fig:buzzer2} se observa imagen del transductor electroacústico utilizado.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=4cm]{./Figures/buzzer2.PNG}
+	\caption{imagen del buzzer seleccionado\protect\footnotemark.}
+	\label{fig:buzzer2}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://emariete.com/zumbador-activo-o-pasivo-para-arduino-esp8266-nodemcu-esp32-etc/}}
+%%
+
+
+\subsection{LED UVC Germicida }
+Los LEDs UVC son más compactos y resistentes a los golpes que las lámparas ultravioleta halógenas. Emiten menos radiación de calor, por lo que pueden montarse más fácilmente sin tener que contar con disipadores adicionales. 
+Los LEDs UVC presentan un ángulo de apertura que oscila alrededor de los 120 grados con lo que es más fácil dirigir toda la potencia de radiación UV a una superficie específica.
+Se utilizó un LED UVC De Alta Potencia, Germicida, tipo SMD3535, para el módulo de desinfección. Sus características técnicas son las siguientes:
+
+\begin{itemize}
+	\item Tipo de LED:		SMD3535.
+	\item Color:		Ultravioleta UVC .
+	\item Potencia:		1 W.
+	\item Corriente		120 mA.	
+	\item Tensión de Entrada:	5 a 8 VDC.
+	\item Flujo Radiante:	7 - 12 mW.
+	\item Longitud de Onda:	280 nm.
+	\item Apertura del Haz:	140 grados.	
+	\item Vida útil:	30000 horas.	
+	\item Diámetro:		6,5 mm.	
+	\item Largo:		15,5 mm.	
+	\item Ancho:		8 mm.		
+	\item Alto:			5,2 mm.		
+	\item Peso: 		120 g.		
+\end{itemize}
+
+
+En la figura \ref{fig:leduvc} se observa imagen del LED UVC Germicida.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=4cm]{./Figures/leduvc.PNG}
+	\caption{imagen del LED UVC Germicida seleccionado\protect\footnotemark.}
+	\label{fig:leduvc}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://www.dled.com.ar/led-uvc-high-power-smd3535-germicida-1w-280nm-7-12mw-5-8v-hp1uvc/}}
+%%
+
+
+
+
 \subsection{Baterías}
 
-En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varían de un modelo a otro pero suelen estar comprendidas entre los 2100 mAH y los 4000mAH. Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
+En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varía de un modelo a otro pero suelen estar comprendidas entre los 2100 mAh y los 4000 mAh. Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
 
-Las baterías van conectadas en serie para lograr una tensión de 7,4 V acorde a la alimentación de los motores y con un margen superior necesario para el correcto funcionamiento del regulador de tensión de 5 V del módulo de accionamiento de motores. 
+Las baterías van conectadas en serie para lograr una tensión de 7,4 V, acorde a la alimentación de los motores, y con un margen superior necesario para el correcto funcionamiento del regulador de tensión de 5 V del módulo de accionamiento de motores. 
 Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:portapila} se muestra las dos baterías 18650 ya instaladas en su portapila.
 
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{./Figures/portapilas.PNG}
-	\caption{Las dos baterías 18650 en su portapila .}
+	\caption{Baterías 18650 en su portapila .}
 	\label{fig:portapila}
 \end{figure}
+
 
 
 \subsection{Módulo de comunicaciones Bluetooth}
 
 %Siendo que el prototipo robot se diseñó para su uso en ambientes interiores, la distancia del enlace no requiere un valor mayor al de algunos metros. Además la tasa de transferencia de datos no es alta, por lo que el ancho de banda no constituye un parámetro limitante. 
 
-Se utilizó el módulo Bluetooth HC-05 para la comunicación comunicaciones con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “Protocolos de comunicaciones en sistemas embebidos”, conectado al puerto serie de la EDU-CIAA. 
+Se utilizó el módulo Bluetooth HC-05 para la comunicación con el robot \citep{HC05}. El mismo ya había sido utilizado en  prácticas de la asignatura “protocolos de comunicación en sistemas embebidos”.
 El módulo permite realizar un enlace digital con un alcance de 10 m aproximadamente y no requiere antena externa ya que se encuentra integrada en el PCB. La velocidad máxima de transmisión asincrónica de 2 Mbps y soporta modo master y modo slave.
 Todos los parámetros del módulo se pueden configurar mediante comandos AT. 
 
@@ -151,8 +243,8 @@ En la figura \ref{fig:moduloHC05} se observa el módulo HC-05.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=8cm]{./Figures/HC05.jpeg}
-	\caption{Módulo Bluetooth HC-05 .\protect\footnotemark.}
+	\includegraphics[width=6cm]{./Figures/HC05.jpeg}
+	\caption{Módulo Bluetooth HC-05\protect\footnotemark.}
 	\label{fig:moduloHC05}
 \end{figure}
 \footnotetext{Imagen tomada de \url{https://maker.pro/custom/tutorial/hc-05-bluetooth-transceiver-module-datasheet-highlights}}
@@ -161,17 +253,22 @@ En la figura \ref{fig:moduloHC05} se observa el módulo HC-05.
 
 Las características del módulo son:
 \begin{itemize}
-	\item Voltaje de operación: 3.6 V - 6 V DC.
+	\item Tensión de operación: 3,6 V - 6 V DC.
 	\item Consumo corriente: 50 mA.
 	\item Bluetooth: V2.0+EDR.
-	\item Frecuencia: Banda ISM 2.4 GHz.
-	\item Modulación: GFSK(Gaussian Frequency Shift Keying)
+	\item Frecuencia: Banda ISM 2,4 GHz.
+	\item Modulación: GFSK (Gaussian Frequency Shift Keying).
 	\item Potencia de transmisión: 4 dBm, Class 2.
-	\item Sensibilidad: -84dBm a 0.1% BER.
+	\item Sensibilidad: -84 dBm a 0.1\% BER.
 	\item Alcance 10 m.
 	\item Tamaño: 3,7 cm x 1,6 cm.
 \end{itemize}
 
+
+\section{Módulos de software}
+%En esta sección se describen los módulos de software utilizados.
+
+Se utilizaron módulos de software de la biblioteca sAPI \citep{sapi} del firmware de la EDU-CIAA versión 3 para acceder de manera simple a los diferentes periféricos.
 
 
 
@@ -210,14 +307,14 @@ El trabajo se organizó para ser terminado en el mes de junio de 2021 con una de
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=\textwidth]{./Figures/gantttabla.PNG}
-\caption{Tabla de tareas de Gantt}
+\caption{Tabla de tareas de Gantt.}
 \label{fig:gantt1}
 \end{figure}
 
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=\textwidth]{./Figures/Gantt.PNG}
-\caption{Diagrama de Gantt}
+\caption{Diagrama de Gantt.}
 \label{fig:gantt2}
 \end{figure}
 
@@ -233,5 +330,4 @@ Se confeccionó también un diagrama de Activity on Node, con la finalidad de re
 \end{figure}
 
 
-A partir de este análisis está organizado el trabajo que se presenta en los próximos capítulos.
 
