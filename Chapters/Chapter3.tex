@@ -251,7 +251,6 @@ En la figura \ref{fig:conectorbt} se observa un detalle del conexionado en la pl
 
 
 
-
 		\subsubsection{Diseño PCB de la placa de expansión de hardware}
 
 
@@ -279,7 +278,7 @@ En la figura \ref{fig:placafoto1} se puede observar una  imagen de la placa proc
 	\label{fig:placafoto1}
 \end{figure}
 
-		\subsubsection{PWM}
+		\subsubsection{Conexionado para motores}
 
 Para el accionamiento de los motores se utilizó modulación por ancho de pulsos (PWM, por su sigla en inglés). La placa EDU-CIAA posee un solo modulo PWM con 11 salidas asociadas. Todas las salidas PWM comparten la misma frecuencia, aunque puede asignarse un valor de ciclo de actividad en forma independiente.
 
@@ -301,9 +300,9 @@ Se utilizaron las líneas de T\_FIL3: PWM4 y T\_COL1: PWM6 para el control de lo
 
 
 
-		\subsubsection{GPIO}
+		\subsubsection{Disposición de Entradas y Salidas}
 
-El módulo GPIO (General Purpose Input/Output, Entrada/Salida de Propósito General) de la sAPI permite modelar un único pin de entrada/salida (pin) o un conjunto de  (puerto).
+Se utilizaron los pines de entrada/salida de Propósito General (GPIO, General Purpose Input/Output)de la placa Edu-CIAA para el conexionado de sensores y actuadores. El módulo GPIO de la sAPI permite modelar un único pin de entrada/salida o un puerto completo.
 Los pines utilizados son:
 
 \begin{itemize}
@@ -319,7 +318,6 @@ Los pines utilizados son:
 	\item LCD\_1:  	Relé.
 	\item LCD\_2:  	Buzzer.		
 \end{itemize}
-
 
 
 %\begin{figure}[h]
@@ -360,13 +358,25 @@ Se utilizaron módulos de software de la biblioteca sAPI para acceder de manera 
 Se modularizó el firmware en archivos, de modo de mantener en un mismo módulo de software las instrucciones relacionadas con cada periférico y que puedan utilizarse (y reutilizarse) en forma ordenada. 
 Se utilizó una máquina de estados finitos como rutina principal para el comportamiento autónomo del robot, en función reactiva a la información obtenida por los sensores.
 
-
-\subsection{Estructura de capas}
+%
+%\subsection{Estructura de capas}
 El diseño del firmware se organizó como una estructura de capas, lo cual permite la separación de las partes que componen el sistema.
 
-%\subsection{Módulos de software}
+\subsection{Módulos de software}
 
 		\subsubsection{Máquina de estados finitos}
+Las Máquinas de Estado Finitas (FSM, por su sigla en inglés) son utilizadas ampliamente como rutinas para reconocimiento de secuencias de datos, para interpretación de tramas de comunicación serie, y para el ordenamiento de tareas ante distintas condiciones medidas. Son básicamente estructuras de programa cuyo comportamiento está determinado por el “estado” en el que se encuentran y por variables (generalmente booleanas) de entrada, ofreciendo para cada caso una salida y un “estado próximo” (que puede tratarse del mismo estado en el que se encuentra).
+El uso de FSM es sencillo, implica un bajo consumo de procesamiento, y resulta flexible para el agregado de nuevas condiciones y estados. Sin embargo, cuando el número de entradas crece, su implementación y mantenimiento puede resultar complejo ya que el comportamiento se establece en el código fuente.
+
+Se utilizó un método en el que la máquina de estados se actualiza a partir de los datos registrados en  una estructura de datos de estados/entradas/salidas almacenada en un archivo header en la memoria del microcontrolador (MdE.h). Las variables de entrada son de tipo booleano y las acciones planteadas por la tabla corresponden a comportamientos puramente reactivos. La solución ha sido presentada en un trabajo de investigación anterior \citep{planilla}.
+
+La ventaja del método utilizado radica en el uso de una aplicación que permite generar el contenido del archivo header a partir de una hoja de cálculo en la que se pueden consignar las distintas acciones a partir de las combinaciones de estado actual y condiciones de entrada. En la planilla de configuración, es posible “enmascarar” condiciones que son indiferentes al comportamiento  usando el valor “X” (interpretado semánticamente como “indeterminado”), que luego es expandido por la aplicación intérprete de modo que finalmente en la estructura de datos de la FSM se consideren todas las condiciones como valores booleanos. 
+La aplicación verifica que no se produzcan combinaciones redundantes o inválidas y se encarga de construir el archivo header con la estructura ordenada de datos para la actualización de la FSM,  para ser transferido al microcontrolador del robot.
+
+La FSM se implementa como rutina principal, tomando los datos de la tabla procesada y consignada en el archivo header, y partiendo siempre de un Estado Inicial. La rutina de la FSM utiliza pocos recursos de procesamiento, relevando las variables de entrada y el valor del Estado actual, y localizando en la tabla la opción de salida y el Estado al que debe pasar .
+		
+		
+		
 		\subsubsection{Sensores}
 		\subsubsection{Motores}
 

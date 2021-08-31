@@ -168,15 +168,15 @@ En la figura \ref{fig:buzzer2} se observa imagen del transductor electroacústic
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=4cm]{./Figures/buzzer2.PNG}
-	\caption{imagen del buzzer seleccionado\protect\footnotemark.}
+	\includegraphics[width=3cm]{./Figures/buzzer2.PNG}
+	\caption{Imagen del buzzer seleccionado\protect\footnotemark.}
 	\label{fig:buzzer2}
 \end{figure}
 \footnotetext{Imagen tomada de \url{https://emariete.com/zumbador-activo-o-pasivo-para-arduino-esp8266-nodemcu-esp32-etc/}}
 %%
 
 
-\subsection{LED UVC Germicida }
+\subsection{LED ultravioleta }
 Los LEDs UVC son más compactos y resistentes a los golpes que las lámparas ultravioleta halógenas. Emiten menos radiación de calor, por lo que pueden montarse más fácilmente sin tener que contar con disipadores adicionales. 
 Los LEDs UVC presentan un ángulo de apertura que oscila alrededor de los 120 grados con lo que es más fácil dirigir toda la potencia de radiación UV a una superficie específica.
 Se utilizó un LED UVC De Alta Potencia, Germicida, tipo SMD3535, para el módulo de desinfección. Sus características técnicas son las siguientes:
@@ -213,22 +213,6 @@ En la figura \ref{fig:leduvc} se observa imagen del LED UVC Germicida.
 
 
 
-\subsection{Baterías}
-
-En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varía de un modelo a otro pero suelen estar comprendidas entre los 2100 mAh y los 4000 mAh. Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
-
-Las baterías van conectadas en serie para lograr una tensión de 7,4 V, acorde a la alimentación de los motores, y con un margen superior necesario para el correcto funcionamiento del regulador de tensión de 5 V del módulo de accionamiento de motores. 
-Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:portapila} se muestra las dos baterías 18650 ya instaladas en su portapila.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=10cm]{./Figures/portapilas.PNG}
-	\caption{Baterías 18650 en su portapila .}
-	\label{fig:portapila}
-\end{figure}
-
-
 
 \subsection{Módulo de comunicaciones Bluetooth}
 
@@ -263,6 +247,22 @@ Las características del módulo son:
 	\item Alcance 10 m.
 	\item Tamaño: 3,7 cm x 1,6 cm.
 \end{itemize}
+
+\subsection{Baterías}
+
+En función del consumo y la intensión de no dedicar mayor espacio a las celdas de alimentación, se emplearon dos baterías de Ion-litio tipo 18650. Una de las ventajas de las Ion-litio es que permiten ser recargadas con una media de entre 600 a 1000 veces sin que se estropeen ni pierdan efectividad \citep{18650}. La capacidad de estas baterías varía de un modelo a otro pero suelen estar comprendidas entre los 2100 mAh y los 4000 mAh. Su tensión nominal es de 3,7 V (hasta 4,2 V en vacío).
+
+Las baterías van conectadas en serie para lograr una tensión de 7,4 V, acorde a la alimentación de los motores, y con un margen superior necesario para el correcto funcionamiento del regulador de tensión de 5 V del módulo de accionamiento de motores. 
+Las baterías se insertaron en un portapilas comercial. En la figura \ref{fig:portapila} se muestra las dos baterías 18650 ya instaladas en su portapila.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=10cm]{./Figures/portapilas.PNG}
+	\caption{Baterías 18650 en su portapila .}
+	\label{fig:portapila}
+\end{figure}
+
 
 
 \section{Módulos de software}
@@ -301,7 +301,10 @@ En esta sección se enumeran los requerimientos planteados en la planificación 
 
 \section{Planificación}
 
-El trabajo se organizó para ser terminado en el mes de junio de 2021 con una dedicación aproximada de 600 horas en total. Con el fin de organizar y dar seguimiento a las actividades requeridas y poder identificar los desvíos en los tiempos de ejecución programados, se cuantificaron los tiempos de las diversas tareas mediante el diagrama de Gantt, que se observa en las figuras \ref{fig:gantt1} y \ref{fig:gantt2}.
+El trabajo se organizó para ser terminado en el mes de junio de 2021 con una dedicación aproximada de 600 horas en total, mientras se realizaba la cursada de la especializacion en sistemas embebidos.
+
+\subsection{Diagrama de Gantt}
+Con el fin de organizar y dar seguimiento a las actividades requeridas y poder identificar los desvíos en los tiempos de ejecución programados, se cuantificaron los tiempos de las diversas tareas mediante el diagrama de Gantt, que se observa en las figuras \ref{fig:gantt1} y \ref{fig:gantt2}.
 
 
 \begin{figure}[htpb]
@@ -320,14 +323,30 @@ El trabajo se organizó para ser terminado en el mes de junio de 2021 con una de
 
 \pagebreak
 
-Se confeccionó también un diagrama de Activity on Node, con la finalidad de resaltar las tareas cuyos retrasos podrían resultar críticos para la concreción del trabajo. En rojo se indica el camino crítico, como puede apreciarse en la figura \ref{fig:AoN}
+\subsection{Diagrama de Precedencias}
+Se confeccionó también un diagrama de Precedencias o de Activity on Node (AON), con la finalidad de resaltar las tareas cuyos retrasos podrían resultar críticos para la concreción del trabajo. En rojo se indica el camino crítico, como puede apreciarse en la figura \ref{fig:AoN}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=\textwidth]{./Figures/AoN.png}
-\caption{Diagrama en \textit{Activity on Node}}
+\includegraphics[width=12cm]{./Figures/AoN.png}
+%\includegraphics[width=\textwidth]{./Figures/AoN.png}
+\caption{diagrama de Precedencias o de Activity on Node (AON).}
 \label{fig:AoN}
 \end{figure}
+\pagebreak
+
+\subsection{Supuestos iniciales del proyecto}
+
+Para el desarrollo de este trabajo se supuso inicialmente que:
+
+\begin{itemize}
+	\item Se iba a contar con disponibilidad de los laboratorios e instrumental de la  Secretaría de Ciencia, Tecnología e innovación productiva. UTN. Buenos Aires, para cubrir la tarea de desarrollo.
+	\item Se iba a disponer de tiempo durante la jornada laboral para la realización del mismo. 
+	\item Se iba a disponer de todos los componentes y herramientas necesarios.
+\end{itemize}
+
+Estos supuestos, incluidos en la planificación del trabajo, se cumplieron solo en parte, ya que la pandemia por COVID-2019 limitaron el acceso a los laboratorios e instrumental, a la vez que se incrementó el tiempo necesario para las actividades laborales desarrolladas en paralelo al proyecto. 
+
 
 
 
