@@ -4,7 +4,7 @@
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 \label{IntroGeneral}
-En este capítulo se presentan las características de los robots de servicio, se  reseña el uso de luz ultravioleta como germicida y se exponen los objetivos que motivaron el presente trabajo y sus respectivo alcance.
+En este capítulo se presentan las características de los robots de servicio, se  reseña el uso de luz ultravioleta como germicida y se exponen los objetivos que motivaron el presente trabajo y su respectivo alcance.
 %----------------------------------------------------------------------------------------
 
 % Define some commands to keep the formatting separated from the content 
@@ -22,7 +22,7 @@ En este capítulo se presentan las características de los robots de servicio, s
 %----------------------------------------------------------------------------------------
 \section{Robots de servicio}
 
-A lo largo del siglo XX la robótica pasó de ser una temática de la rama de la ciencia ficción, a cumplir un importante rol dentro de los complejos industriales. En los últimos años los robots han pasado a tener cada vez más tareas de “servicio” para ambientes  públicos y hogareños.
+A lo largo del siglo XX la robótica pasó de ser una temática de la rama de la ciencia ficción, a cumplir un importante rol dentro de los complejos industriales. En los últimos años los robots han pasado a tener cada vez más tareas de “servicio” para ambientes  públicos y hogareños \citep{services}.
 La robótica de servicios abarca un amplio campo de aplicaciones, la mayoría de las cuales tienen diferentes grados de automatización, desde la teleoperación completa hasta el funcionamiento autónomo, y constituye un campo de aplicación más diverso que el de la robótica industrial. En la  figura \ref{fig:robotsservicio} se pueden observar tres tipos de robots de servicios: una aspiradora hogareña, un cortador de césped y un limpiavidrios.
 
 \begin{figure}[h]
@@ -34,9 +34,8 @@ La robótica de servicios abarca un amplio campo de aplicaciones, la mayoría de
 \footnotetext{Imágenes tomadas de \url{https://www.domotizar.com/}}
 
 
-A mediados de la década de 1990, la Comisión Económica de las Naciones Unidas para Europa (UNECE) \citep{UNECE} y la Federación Internacional de Robótica (IFR) \citep{IFR} adoptaron un sistema de clasificación de robots de servicio dividida por categorías y tipos de interacción, que se ha mantenido hasta la actualidad. En la  figura \ref{fig:robotsservicio} se puede observar los primeros ítems de clasificación para robots domésticos/personales de acuerdo a los tipos y áreas de aplicación.
+A mediados de la década de 1990, la Comisión Económica de las Naciones Unidas para Europa (UNECE) \citep{UNECE} y la Federación Internacional de Robótica (IFR) \citep{IFR} adoptaron un sistema de clasificación de robots de servicio dividida por categorías y tipos de interacción, que se ha mantenido hasta la actualidad. En la  figura \ref{fig:clasificacion} se puede observar los primeros ítems de clasificación para robots domésticos/personales de acuerdo a los tipos y áreas de aplicación.
 \pagebreak
-
 
 \begin{figure}[h]
 	\centering
@@ -51,9 +50,9 @@ A mediados de la década de 1990, la Comisión Económica de las Naciones Unidas
 
 \subsection{Robots móviles para inspección y limpieza}
 
-Los robots móviles son dispositivos que poseen un sistema de locomoción capaz de navegar a través de un determinado ambiente de trabajo. Normalmente cuentan con cierto nivel de autonomía que les permite el desplazamiento sin colisiones por un recorrido específico. Sus aplicaciones son muchas y en general  están relacionadas con tareas monótonas o riesgosas para la salud humana.
+Los robots móviles son dispositivos que poseen un sistema de locomoción capaz de navegar a través de un determinado ambiente de trabajo. Normalmente cuentan con un cierto nivel de autonomía que les permite el desplazamiento sin colisiones por un recorrido específico. Sus aplicaciones son muchas y en general  están relacionadas con tareas monótonas o riesgosas para la salud humana\citep{whatare}.
 
-Las plataformas móviles pueden realizar tareas de inspección y limpieza de manera autónoma o controlada remotamente por un operador. Son utilizadas en zonas de difícil acceso debido a limitaciones de espacio o razones de seguridad. Este tipo de robot suele contar con sensores de distinto tipo, para detectar los límites y obstáculos ante los que se presentan.
+Las plataformas móviles pueden realizar tareas de inspección y limpieza de manera autónoma o controlada remotamente por un operador. Son utilizadas en zonas de difícil acceso debido a limitaciones de espacio o razones de seguridad. Este tipo de robot suele contar con sensores de distinto tipo para detectar los límites y obstáculos del entorno.
  
 La proliferación de robots para limpieza se incrementó fuertemente a partir de la pandemia de Covid-19, con lo que se los puede encontrar hoy en día en espacios en los que antes no estaban presentes, tales como salas médicas,  hoteles y en el transporte público \citep{Cleaning}. 
 
@@ -68,63 +67,16 @@ Estos dispositivos “de interior” abarcan varios tipos. En la  figura \ref{fi
 \footnotetext{Imágenes tomadas de \url{https://www.domotizar.com/}}
 
 Si bien todas las aspiradoras robots cumplen con la misma función básica de aspirar polvo y suciedad, las prestaciones de cada modelo y marca varían considerablemente junto con el precio de mercado. Los precios pueden oscilar entre los 200 y los 1200 dólares \citep{roomba}.
-Los robots de mayor gama incorporan cepillos, trapeadores húmedos y/o luz ultravioleta germicida. Las versiones más van avanzadas  presentan mayor cantidad de sensores de proximidad a la vez que incorporan cámaras y rayos laser para medir distancias hasta los obstáculos.  
+Los robots de mayor gama incorporan cepillos, trapeadores húmedos y/o luz ultravioleta germicida. Las versiones más avanzadas  presentan mayor cantidad de sensores de proximidad a la vez que incorporan cámaras y rayos láser para medir distancias hasta los obstáculos y planificar recorridos. 
 La navegación de los robots más simples es de tipo aleatoria, simplemente  sorteando los obstáculos con los que se encuentra y sin seguir una trayectoria ordenada. 
-Robots más elaborados obtienen información del entorno usando cámaras o lasers, y construyendo un  mapa para planificar un recorrido que siga un orden específico. 
 
 
-%----------------------------------------------------------------------------------------
-
-\subsection{Robots de desinfección por luz ultravioleta}
-
-Desde hace tiempo se utiliza luz ultravioleta para la desinfección de agua potable, y más recientemente ha sido incorporada como método germicida en conductos de ventilación. También se ha utilizado para la desinfección de instrumental e insumos en ambientes hospitalarios. En el  siguiente apartado se dará referencia acerca de la eficiencia de la luz ultravioleta, dentro de cierto rango de longitud de onda, para el control de bacterias y virus.
-
-En los últimos dos años, con el aumento de precauciones debido a la pandemia mundial por el COVID-19, comenzaron a comercializarse robots móviles de luz ultravioleta germicida, para desinfectar quirófanos y salas de hospitales\citep{inventos}. 
-Estos robots, poseen paneles con tubos ultravioleta para poder irradiar completamente una habitación o parte de la misma y son de alturas entre los 120 y los 180 cm para poder iluminar camas y mesas desde arriba y poder pasar por puertas y aberturas convencionales. En la figura \ref{fig:robotuv} se muestra un robot de estas características.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=12cm]{./Figures/robothospitalario.PNG}
-	\caption{Robot desinfectante por luz ultravioleta en una sala de hospital\protect\footnotemark.}
-	\label{fig:robotuv}
-\end{figure}
-\footnotetext{Imagen tomada de \url{https://www.infoplc.net/plus-plus/empresas/item/107726-mts-tech-robot-movil-ultravioleta-covid-19}}
-
-La cobertura de los robots móviles de luz ultravioleta germicida suele ser mayor a los 180 grados, por lo que resulta importante no solo el recorrido realizado para abarcar todas las superficies, sino también evitar la presencia cercana de personas ya que la exposición de rayos ultravioleta puede ser perjudicial para la piel y la vista.  
-
-Además de los hospitales, estos robots están siendo usados en otros espacios, como vagones del subterráneo, espacios comunes en hoteles, oficinas y áreas de control en aeropuertos \citep{masrobots}.
-
-Otra aplicación que empieza a dársele a los robots UV-C es la desinfección fungicida en viñedos (en particular el oidio, que es un hongo que ataca todos los tejidos verdes del cultivo). Dispositivos robot recorren las plantaciones por la noche con paneles ultravioleta cuya luz daña el ADN del hongo, sin afectar a las plantas \citep{infowine}.
-
-En 2020, la empresa argentina UV- Robotics lanzó el UVR-Robot \citep{UVR} que cuenta con tubos de luz UV-C germicida dispuestos en un arreglo de 360 grados para que la luz llegue hasta cualquier rincón y con una plataforma omnidireccional. El proceso toma  entre 5 y 15 minutos según la superficie, y se lo puede dirigir a control remoto. Esto le permite desinfectar autobuses, aviones y otros medios de transporte, salas de espera, centros de mayores, colegios, entidades bancarias, hoteles, ascensores o aseos. La iniciativa  tuvo el apoyo del Ministerio de Desarrollo Nacional y cuenta con validaciones y homologaciones de la Universidad Tecnológica Nacional. En la figura \ref{fig:uvrobot} se observa al UVR-Robot desinfectando un vagón de tren subterráneo. 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=12cm]{./Figures/uvrobot.jpeg}
-	\caption{UVR-Robot de la agencia nacional UV- Robotics\protect\footnotemark.}
-	\label{fig:uvrobot}
-\end{figure}
-\footnotetext{Imagen tomada de \url{https://www.interempresas.net/Tecnologia-aulas/Articulos/321010-UVR-bot-reto-acabar-cualquier-rastro-covid-19-20-minutos-luz-ultravioleta.html}}
-
-A nivel hogareño, muchos robots de limpieza empiezan a incorporar la luz ultravioleta como medio de desinfección. En general, es una característica adicional que presentan las aspiradoras robóticas que además de barrido y trapeado húmedo agregan la esterilización de suelos con luz ultravioleta, resultando hoy en día una característica evaluada en las comparativas de los distintos productos  \citep{Bidcom}. En la figura \ref{fig:coradiruv} se observa la imagen de una aspiradora modelo Warptech ARobot 1000 UV con la funcionalidad de desinfección por UV-C por medio de LEDs ultravioletas en la parte inferior.
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=5cm]{./Figures/coradiruv.jpg}
-	\caption{Imagen de la aspiradora Warptech ARobot 1000 UV\protect\footnotemark.}
-	\label{fig:coradiruv}
-\end{figure}
-\footnotetext{Imagen tomada de \url{https://www.coradir.com.ar/producto/productos_categoria/aspiradoras-roboticas}}
-
-
-También se han comenzado a comercializar  robots móviles de las dimensiones de una aspiradora robot, pero con el único fin de esterilizar gérmenes y virus usando la emisión de luz UV-C de baja intensidad (sin aspiradora o trapeador), para empresas y comercios en general. La propuesta que presentan es la dejar al robot funcionando por la noche en los espacios que se desean desinfectar. Un ejemplo de esta aplicación es el robot germicida móvil por UV-C y ozono  Conga Apolo \citep{conga} de la empresa española Cecotec. Su precio se encuentra alrededor de los 1000 euros.
 
 
 %----------------------------------------------------------------------------------------
 \section{Desinfección usando luz ultravioleta}
 
-El espectro ultravioleta (UV) abarca la banda de radiación electromagnética entre los 400 y 100 nm, presentando una longitud de onda menor que la de la luz visible y mayor que la de los rayos X.  Se divide en las siguientes categorías principales:
+El espectro ultravioleta (UV) abarca la banda de radiación electromagnética entre los 400 y 100 nm, presentando una longitud de onda menor que la de la luz visible y mayor que la de los rayos X \citep{lit}. Se divide en las siguientes categorías principales:
 
 \begin{itemize}
 	\item los rayos UV-A (400 – 315 nm), que son los más cercanos al espectro visible.
@@ -174,6 +126,62 @@ Una de las ventajas de este método de desinfección radica en que una vez termi
 %	\label{fig:gabineteuv}
 %\end{figure}
 
+
+
+La desinfección por rayos UV-C es también útil en el caso de superficies de difícil acceso por su ubicación o cuando la zona presenta formas y estructuras que no permiten la higienización por contacto con paños o rociadores. 
+
+Por otra parte, la irradiación con luz UV-C presenta una serie de limitaciones. El patógeno que desea esterilizarse debe ser  expuesto directamente a la radiación para que sea eliminado. Si bien la Organización Mundial de la Salud (OMS) recomienda el uso de rayos UV-C para desinfección, también alerta sobre los riesgos de  exposición en seres humanos y animales, cuya piel puede verse irritada, a la vez que puede producir daños a la vista \citep{MYTH}. En este sentido promueven la limpieza periódica de manos con jabón o con alcohol, y dejan la esterilización con UV-C para  instrumental y objetos de uso diario.
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\subsection{Robots de desinfección por luz ultravioleta}
+
+Desde hace tiempo se utiliza luz ultravioleta para la desinfección de agua potable, y más recientemente ha sido incorporada como método germicida en conductos de ventilación. También se ha utilizado para la desinfección de instrumental e insumos en ambientes hospitalarios\citep{inventos}. 
+
+En los últimos dos años, con el aumento de los cuidados de la salud debido a la pandemia mundial por el COVID-19, comenzaron a comercializarse robots móviles de luz ultravioleta germicida, para desinfectar quirófanos y salas de hospitales\citep{interempresas}.  
+Estos robots, poseen paneles con tubos ultravioleta para poder irradiar completamente una habitación o parte de la misma y son de alturas entre los 120 y los 180 cm para poder iluminar camas y mesas desde arriba y poder pasar por puertas y aberturas convencionales. En la figura \ref{fig:robotuv} se muestra un robot de estas características.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{./Figures/robothospitalario.PNG}
+	\caption{Robot desinfectante por luz ultravioleta en una sala de hospital\protect\footnotemark.}
+	\label{fig:robotuv}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://www.infoplc.net/plus-plus/empresas/item/107726-mts-tech-robot-movil-ultravioleta-covid-19}}
+
+La cobertura de los robots móviles de luz ultravioleta germicida suele ser mayor a los 180 grados, por lo que resulta importante no solo el recorrido realizado para abarcar todas las superficies, sino también evitar la presencia cercana de personas ya que la exposición de rayos ultravioleta puede ser perjudicial para la piel y la vista.  
+
+Además de los hospitales, estos robots están siendo usados en otros espacios, como vagones del subterráneo, espacios comunes en hoteles, oficinas y áreas de control en aeropuertos \citep{masrobots}.
+
+
+En 2020, la empresa argentina UV- Robotics lanzó el UVR-Robot \citep{UVR} que cuenta con tubos de luz UV-C germicida dispuestos en un arreglo de 360 grados para que la luz llegue hasta cualquier rincón y con una plataforma omnidireccional. El proceso toma  entre 5 y 15 minutos según la superficie, y se lo puede dirigir a control remoto. Esto le permite desinfectar autobuses, aviones y otros medios de transporte, salas de espera, centros de mayores, colegios, entidades bancarias, hoteles, ascensores o aseos. La iniciativa  tuvo el apoyo del Ministerio de Desarrollo Nacional y cuenta con validaciones y homologaciones de la Universidad Tecnológica Nacional. En la figura \ref{fig:uvrobot} se observa al UVR-Robot desinfectando un vagón de tren subterráneo. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{./Figures/uvrobot.jpeg}
+	\caption{UVR-Robot de la agencia nacional UV- Robotics\protect\footnotemark.}
+	\label{fig:uvrobot}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://www.interempresas.net/Tecnologia-aulas/Articulos/321010-UVR-bot-reto-acabar-cualquier-rastro-covid-19-20-minutos-luz-ultravioleta.html}}
+
+A nivel hogareño, muchos robots de limpieza empiezan a incorporar la luz ultravioleta como medio de desinfección. En general, es una característica adicional que presentan las aspiradoras robóticas que además de barrido y trapeado húmedo agregan la esterilización de suelos con luz ultravioleta, resultando hoy en día una característica evaluada en las comparativas de los distintos productos  \citep{Bidcom}. En la figura \ref{fig:coradiruv} se observa la imagen de una aspiradora modelo Warptech ARobot 1000 UV con la funcionalidad de desinfección por UV-C por medio de LEDs ultravioletas en la parte inferior.
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=5cm]{./Figures/coradiruv.jpg}
+	\caption{Imagen de la aspiradora Warptech ARobot 1000 UV\protect\footnotemark.}
+	\label{fig:coradiruv}
+\end{figure}
+\footnotetext{Imagen tomada de \url{https://www.coradir.com.ar/producto/productos_categoria/aspiradoras-roboticas}}
+
+
+También se han comenzado a comercializar  robots móviles de las dimensiones de una aspiradora robot, pero con el único fin de esterilizar gérmenes y virus usando la emisión de luz UV-C de baja intensidad (sin aspiradora o trapeador), para empresas y comercios en general. La propuesta que presentan es la de dejar al robot funcionando por la noche en los espacios que se desean desinfectar. Un ejemplo de esta aplicación es el robot germicida móvil por UV-C y ozono  Conga Apolo \citep{conga} de la empresa española Cecotec. Su precio se encuentra alrededor de los 1000 euros.
+
 Existen también dispositivos portátiles de esterilización con LEDs ultravioleta en la longitud de onda entre los 200 y 280 nm para desinfectar celulares, teclados, llaves, juguetes para bebés y otros objetos pequeños. Se trata de luz de baja potencia (menor a los 15 mW) pero fuertemente enfocada sobre la superficie a esterilizar, desde una distancia muy corta (menor a los 3 cm), con lo que aprovechan al máximo la energía radiada. El tiempo de  aplicación de la luz UV sobre la superficie oscila entre los 30 y 60 segundos, según la potencia del dispositivo. En la figura \ref{fig:esterilizador} se observa una imagen de un modelo de esterilizador portátil por UV-C. Muchos de estos dispositivos justifican su eficiencia con un estudio realizado en 2020 por el Guangdong Detection Center of Microbiology \citep{Guangdong}.   
 
 
@@ -186,9 +194,7 @@ Existen también dispositivos portátiles de esterilización con LEDs ultraviole
 \footnotetext{Imagen tomada de \url{https://procid.cl/producto/luz-led-germicida-portatil-uv-c-blanco/}}
 
 
-La desinfección por rayos UV-C es también útil en el caso de superficies de difícil acceso por su ubicación o cuando la zona presenta formas y estructuras que no permiten la higienización por contacto con paños o rociadores. 
 
-Por otra parte, la irradiación con luz UV-C presenta una serie de limitaciones. El patógeno que desea esterilizarse debe ser  expuesto directamente a la radiación para que sea eliminado. Si bien la Organización Mundial de la Salud (OMS) recomienda el uso de rayos UV-C para desinfección, también alerta sobre los riesgos de  exposición en seres humanos y animales, cuya piel puede verse irritada, a la vez que puede producir daños a la vista \citep{MYTH}. En este sentido promueven la limpieza periódica de manos con jabón o con alcohol, y dejan la esterilización con UV-C para  instrumental y objetos de uso diario.
 
 
 
@@ -213,7 +219,7 @@ En función de estas cuestiones, y con el fin de elaborar un trabajo acorde al n
 
 Si bien existen plataformas robot con fines educativos y de experimentación, la mayoría son de fabricación extranjera y de costos elevados para ser afrontados por instituciones educativas. La construcción de prototipos robóticos a nivel nacional constituye en ese sentido un buen aporte para ampliar el parque de plataformas de experimentación y desarrollo de nuevas aplicaciones.
 
-Se espera que el hardware resultante del presente trabajo pueda ser aprovechado en el Grupo de Inteligencia Artificial y Robótica de la UTN - Facultad Regional Buenos Aires, para la evaluación de algoritmos de Inteligencia Artificial. La placa EDU-CIAA cuenta con capacidad suficiente para el procesamiento de algoritmos reactivos para la planificación de recorridos con obstáculos (compatibles con trabajos realizados), en los que intervenga aprendizaje por refuerzo o comportamientos “aprendidos” con una red neuronal. 
+Se espera que el hardware resultante del presente trabajo pueda ser aprovechado en el Grupo de Inteligencia Artificial y Robótica (GIAR) de la UTN - Facultad Regional Buenos Aires, para la evaluación de algoritmos de Inteligencia Artificial. La placa EDU-CIAA cuenta con capacidad suficiente para el procesamiento de algoritmos reactivos para la planificación de recorridos con obstáculos (compatibles con trabajos realizados), en los que intervenga aprendizaje por refuerzo o comportamientos “aprendidos” con una red neuronal. 
 
 %----------------------------------------------------------------------------------------
 
@@ -223,32 +229,86 @@ Se espera que el hardware resultante del presente trabajo pueda ser aprovechado 
 El propósito de este trabajo es el desarrollo de un prototipo de robot móvil para ser utilizado en tareas de desinfección por efecto de rayos ultravioletas germicidas.
 El dispositivo posee un modo autónomo en el que realiza un recorrido aleatorio dentro de una habitación evitando obstáculos detectados por los sensores, y un modo de teleoperación en el que puede controlarse a distancia (de unos metros) desde una aplicación en un celular o tablet a través de Bluetooth.
 
-El prototipo se diseñó para que una superficie plana sea irradiada con un dispositivo emisor de rayos ultravioletas de tipo C en forma teleoperada o haciendo un recorrido autónomo aleatorio, aceptando las propiedades germicidas en las emisiones de este rango de longitud de onda (entre los 200 y 280 nm). 
 
 En todos los casos, el uso de este robot móvil constituye un aporte a la desinfección de ambientes cerrados, que no implica que deba dejarse de lado los métodos tradicionales de prevención y limpieza. 
 
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%-----------------------------------------------------------------
+\section{Requerimientos}
 
-Se utilizan sensores infrarrojos y de contacto para evitar los obstáculos que puedan aparecer en el camino del robot. La información sensada se maneja en forma de valores booleanos, para simplificar el procesamiento, tanto en uso de memoria como en velocidad. 
+En esta sección se enumeran los requerimientos planteados en la planificación inicial del proyecto.  Los  requerimientos se han dividido en funcionales y no funcionales.
 
-El comportamiento general, en el modo autónomo, puede ser reconfigurado a través de una tabla disponible en una librería del programa, y generada por una aplicación en PC. Esto permite cambiar el comportamiento reactivo del robot, sin modificar la rutina principal de procesamiento, basada en máquina de estados.
+\label{sec:requerimientos}
+
+\begin{enumerate}
+\item Requerimientos funcionales
+	\begin{enumerate}
+	\item Capacidad de locomoción.  El robot debe ser capaz de desplazarse por medio de ruedas motorizadas, a través de superficies planas.
+	\item Capacidad de percepción. El robot debe ser capaz de detectar y obtener información del medio. 
+	\item Capacidad de comunicación inalámbrica. El robot sebe ser capaz de establecer una comunicación  por medio de un módulo Bluetooth, con una aplicación android en un celular o tablet.
+	\item El robot deberá funcionar con alimentación a batería recargable.
+	\item El proyecto debe ser extensible a una posible herramienta de enseñanza e investigación.
+
+	\end{enumerate}
+\item Requerimientos no funcionales
+	\begin{enumerate}
+	\item El robot no debe emitir luz UV-C cuando detecte movimiento a su alrededor, para no producir daños a la salud de personas o animales con los que interactue.
+	\item El diseño del robot debe respetar regulaciones en cuanto a radiación en el espectro ultravioleta.
+	\item Se utilizarán componentes electrónicos disponibles comercialmente en Argentina.
+	\end{enumerate}
+\end{enumerate}
+
+%\section{Planificación}
+%
+%El trabajo se organizó para ser terminado en el mes de junio de 2021 con una dedicación aproximada de 600 horas en total, mientras se realizaba la cursada de la especialización en sistemas embebidos.
+%
+%\subsection{Diagrama de Gantt}
+%Con el fin de organizar y dar seguimiento a las actividades requeridas y poder identificar los desvíos en los tiempos de ejecución programados, se cuantificaron los tiempos de las diversas tareas mediante el diagrama de Gantt, que se observa en las figuras \ref{fig:gantt1} y \ref{fig:gantt2}.
+%
+%
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=\textwidth]{./Figures/gantttabla.PNG}
+%\caption{Tabla de tareas de Gantt.}
+%\label{fig:gantt1}
+%\end{figure}
+%
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=\textwidth]{./Figures/Gantt.PNG}
+%\caption{Diagrama de Gantt.}
+%\label{fig:gantt2}
+%\end{figure}
+%
+%\pagebreak
+%
+%\subsection{Diagrama de Precedencias}
+%Se confeccionó también un diagrama de Precedencias o de Activity on Node (AON), con la finalidad de resaltar las tareas cuyos retrasos podrían resultar críticos para la concreción del trabajo. En rojo se indica el camino crítico, como puede apreciarse en la figura \ref{fig:AoN}
+%
+%\begin{figure}[htpb]
+%\centering 
+%\includegraphics[width=12cm]{./Figures/AoN.png}
+%%\includegraphics[width=\textwidth]{./Figures/AoN.png}
+%\caption{diagrama de Precedencias o de Activity on Node (AON).}
+%\label{fig:AoN}
+%\end{figure}
+%\pagebreak
+
+\subsubsection{Supuestos iniciales del proyecto}
+
+Para el desarrollo de este trabajo se supuso inicialmente que:
+
+\begin{itemize}
+	\item Se iba a contar con disponibilidad de los laboratorios e instrumental de la  Secretaría de Ciencia, Tecnología e innovación productiva. UTN. Buenos Aires, para cubrir la tarea de desarrollo.
+	\item Se iba a disponer de tiempo durante la jornada laboral para la realización del mismo. 
+	\item Se iba a disponer de todos los componentes y herramientas necesarios.
+\end{itemize}
+
+Estos supuestos, incluidos en la planificación del trabajo, se cumplieron solo en parte, ya que la pandemia por COVID-2019 limitaron el acceso a los laboratorios e instrumental, a la vez que se incrementó el tiempo necesario para las actividades laborales desarrolladas en paralelo al proyecto. 
 
 
-La plataforma posee una placa de procesamiento central (EDU-CIAA) que recibe datos y una placa de control para el accionamiento de motores y/o dispositivos adicionales (como puede ser el encendido de LEDs UV-C germicidas). En la figura \ref{fig:blocks} se puede apreciar un diagrama con los principales bloques del dispositivo.
 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{./Figures/blocks.png}
-	\caption{Repressentación del robot para tareas de desinfección por UV-C.}
-	\label{fig:blocks}
-\end{figure}
-
-Se construyó además un prototipo mecánico para contener las distintas partes de hardware electrónico, como así también pode observar el comportamiento de sensores y motores en su conjunto.
-Si bien el prototipo contempla el recorrido sobre el piso, irradiando luz ultravioleta hacia abajo, no hay ningún impedimento para que los se sensores se monten de forma que el robot pueda recorrer una superficie plana elevada (una mesa de trabajo, por ejemplo) sin caerse, o que el emisor de luz se encuentre en la parte lateral o superior (dado que es controlado en forma independiente).
-
-No se plantean pruebas funcionales que demuestren que se han esterilizado microorganismos y de virus al utilizar el dispositivo, siendo que eso implicaría ensayos y estudios que exceden el equipamiento disponible y las aéreas de estudio de la especialización en sistemas embebidos.
-
-El robot se alimenta con baterias recargables. No se  monitorea   ni se realiza la carga de las baterías. No se incluye cargador.
 
 
 
